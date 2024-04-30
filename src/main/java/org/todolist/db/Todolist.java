@@ -27,7 +27,7 @@ public class Todolist {
 
   @Override
   public String toString() {
-    return "Todolist{" +
+    return "To-do list{" +
             "tasks=" + tasks +
             '}';
   }

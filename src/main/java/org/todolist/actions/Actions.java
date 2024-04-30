@@ -18,7 +18,7 @@ public class Actions {
     }
 
     util.printALine();
-    System.out.println("Here are your todos:");
+    System.out.println("Here are your to-dos:");
     util.printALine();
 
     for (int i = 0; i < tasks.size(); i++) {
@@ -36,20 +36,20 @@ public class Actions {
     Todolist.Task task = new Todolist.Task();
 
     util.printALine();
-    System.out.print("Enter a name for the new todo: ");
+    System.out.print("Enter a name for the new to-do: ");
 
     Scanner scanner = new Scanner(System.in);
     String todoTitle = scanner.nextLine();
 
     if (todoTitle.trim().isEmpty()) {
-      int userChoice = util.userChoice("The new todo name is empty, would you like to re-enter it?");
+      int userChoice = util.userChoice("The new to-do name is empty, would you like to re-enter it?");
 
       switch (userChoice) {
         case 1:
           addNewTodo(tasks);
           return tasks;
         default:
-          System.out.println("Creating a new Todo has been cancelled!");
+          System.out.println("Creating a new to-do has been cancelled!");
           return tasks;
       }
     }
@@ -57,7 +57,7 @@ public class Actions {
     task.setTitle(todoTitle);
     tasks.add(task);
 
-    System.out.println("New todo created successfully!");
+    System.out.println("New to-do created successfully!");
 
     return tasks;
   }
@@ -65,7 +65,7 @@ public class Actions {
   public List<Todolist.Task> deleteTodoWithIndex(List<Todolist.Task> tasks) {
     viewTodoList(tasks);
     util.printALine();
-    System.out.print("Type the Todo index you want to delete: ");
+    System.out.print("Type the to-do index you want to delete: ");
 
     Scanner scanner = new Scanner(System.in);
     int index = scanner.nextInt();
@@ -78,14 +78,14 @@ public class Actions {
           deleteTodoWithIndex(tasks);
           return tasks;
         default:
-          System.out.println("Creating a new Todo has been cancelled!");
+          System.out.println("Creating a new to-do has been cancelled!");
           return tasks;
       }
     }
 
     tasks.remove(index);
 
-    System.out.println("Todo deleted successfully!");
+    System.out.println("To-do deleted successfully!");
 
     return tasks;
   }
@@ -98,7 +98,7 @@ public class Actions {
 
     util.printALine();
     System.out.println("Which way you want to delete?");
-    int userChoice = util.userChoice( "Delete with index:", "Delete all todos");
+    int userChoice = util.userChoice( "Delete with index:", "Delete all to-dos");
 
     switch (userChoice) {
       case 1:
@@ -106,7 +106,7 @@ public class Actions {
         return tasks;
       case 2:
         tasks.clear();
-        System.out.println("All todos deleted.");
+        System.out.println("All to-dos deleted.");
         break;
       default:
         int userItemChoice = util.userChoice("You entered number! Would you like to re-enter it?");
@@ -116,7 +116,7 @@ public class Actions {
             deleteTodos(tasks);
             break;
           default:
-            System.out.println("Deleting a Todo has been cancelled!");
+            System.out.println("Deleting a to-do has been cancelled!");
             break;
         }
         break;
